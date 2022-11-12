@@ -2,8 +2,11 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import App from "./App";
-import "./index.css";
+import App from "./components/App/App";
+import { ThemeProvider } from "styled-components";
+import { BrowserRouter } from "react-router-dom";
+import mainTheme from "./styles/mainTheme";
+import GlobalStyle from "./GlobalStyle";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -11,7 +14,12 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ThemeProvider theme={mainTheme}>
+        <GlobalStyle />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );

@@ -1,8 +1,8 @@
 const mainTheme = {
-  mainBlack: "#182626",
+  mainBlack: "#252525",
   mainWhite: "#fcfcfc",
-  mainLightBlue: "#8080ee",
-  secondaryLightBlue: "#4545aa",
+  mainLightBlue: "#4545aa",
+  secondaryLightBlue: "#bbdaf5",
   secondaryBlue: "#2d2d80",
   mainBlackTransparent: "rgba(24, 38, 38, 0.8)",
 };

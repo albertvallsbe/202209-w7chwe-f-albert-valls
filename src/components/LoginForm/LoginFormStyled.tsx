@@ -6,7 +6,7 @@ export const LoginFormStyled = styled.form`
   align-items: center;
 
   .form__label {
-    font-weight: 800;
+    font-weight: 600;
   }
 
   .form__group {
@@ -15,16 +15,16 @@ export const LoginFormStyled = styled.form`
     padding-top: 0.7rem;
 
     input {
-      background-color: ${(props) => props.theme.secondaryLightGreen};
+      background-color: ${(props) => props.theme.secondaryLightBlue};
       border-radius: 10px;
-      border: 1px solid ${(props) => props.theme.secondaryGreen};
+      border: 1px solid ${(props) => props.theme.secondaryBlue};
       padding: 0.5rem 0.7rem;
     }
 
     textarea {
-      background-color: ${(props) => props.theme.secondaryLightGreen};
+      background-color: ${(props) => props.theme.secondaryLightBlue};
       border-radius: 10px;
-      border: 1px solid ${(props) => props.theme.secondaryGreen};
+      border: 1px solid ${(props) => props.theme.secondaryBlue};
       padding: 0.5rem 0.7rem 1.6rem 0.7rem;
     }
 
@@ -34,6 +34,10 @@ export const LoginFormStyled = styled.form`
       border: 1px solid ${(props) => props.theme.secondaryGreen};
       padding: 0.5rem 0.7rem;
     }
+  }
+  .button {
+    margin: 1rem 2rem;
+    width: 180px;
   }
 `;
 

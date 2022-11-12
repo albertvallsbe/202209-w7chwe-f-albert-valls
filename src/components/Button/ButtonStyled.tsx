@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const ButtonStyled = styled.button`
-  background-color: ${(props) => props.theme.mainLightGreen};
-  color: ${(props) => props.theme.mainBlack};
+  background-color: ${(props) => props.theme.secondaryBlue};
+  color: ${(props) => props.theme.mainWhite};
   border: none;
   border-radius: 0.5rem;
   font-family: inherit;

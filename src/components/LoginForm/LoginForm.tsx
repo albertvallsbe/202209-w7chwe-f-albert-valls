@@ -1,16 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import useUser from "../../hooks/useUser";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { UserCredentials } from "../../types/types";
 import Button from "../Button/Button";
 import { LoginFormStyled } from "./LoginFormStyled";
 
 const LoginForm = (): JSX.Element => {
-  const dispatch = useAppDispatch();
   const { login } = useUser();
-  const navigate = useNavigate();
-  const loggedUser = useAppSelector(({ user }) => user.isLogged);
 
   const initialFormData = {
     username: "",
@@ -38,13 +33,6 @@ const LoginForm = (): JSX.Element => {
       password: formData.password,
     };
     login(user);
-    if (loggedUser) {
-      dispatch(openModalActionCreator("Welcome back!"));
-
-      setTimeout(() => {
-        navigate("/");
-      }, 3000);
-    }
   };
 
   return (
@@ -77,8 +65,8 @@ const LoginForm = (): JSX.Element => {
               required
             />
           </div>
-          <Button action={() => {}} text="Login" />
         </div>
+        <Button action={() => {}} text="Login" />
       </LoginFormStyled>
     </>
   );
