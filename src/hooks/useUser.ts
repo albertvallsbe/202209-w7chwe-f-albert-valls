@@ -4,6 +4,7 @@ import {
   loginUserActionCreator,
   logoutUserActionCreator,
 } from "../redux/features/userSlice/userSlice";
+import { useNavigate } from "react-router-dom";
 import {
   CustomTokenPayload,
   LoginResponse,
@@ -15,6 +16,7 @@ import decodeToken from "jwt-decode";
 const useUser = () => {
   const url = process.env.REACT_APP_API_URL_LOCAL!;
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const login = async (user: UserCredentials) => {
     try {
@@ -41,6 +43,7 @@ const useUser = () => {
     try {
       localStorage.setItem("token", "");
       dispatch(logoutUserActionCreator());
+      navigate("/");
     } catch {}
   };
   return { login, logout };
