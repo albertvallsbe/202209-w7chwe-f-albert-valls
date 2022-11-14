@@ -6,7 +6,7 @@ import App from "./components/App/App";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import mainTheme from "./styles/mainTheme";
-import GlobalStyle from "./GlobalStyle";
+import GlobalStyle from "./styles/GlobalStyle";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);

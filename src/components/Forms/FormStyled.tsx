@@ -1,12 +1,23 @@
 import styled from "styled-components";
 
-export const LoginFormStyled = styled.form`
+export const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 500px;
+
+  .form {
+    padding: 0 10px 0 0;
+    height: 25px;
+  }
 
   .form__label {
     font-weight: 600;
+  }
+  .form__container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
   }
 
   .form__group {
@@ -39,6 +50,13 @@ export const LoginFormStyled = styled.form`
     margin: 1rem 2rem;
     width: 180px;
   }
+  p {
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    justify-content: center;
+    font-size: 0.7rem;
+  }
 `;
 
-export default LoginFormStyled;
+export default FormStyled;
