@@ -1,4 +1,6 @@
 import { createGlobalStyle } from "styled-components";
+import mainStyleColors from "./mainStyleColors";
+import mainStyleFonts from "./mainStyleFonts";
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -9,10 +11,14 @@ const GlobalStyle = createGlobalStyle`
 body,
 html {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  font-family: ${mainStyleFonts.mainFont};
+  background-color: "#7eabc3";
+  color: "#7eabc3";
 }
 body {
-  background-color: "#7eabc3";
+ 
 }
 input,
 button,
@@ -59,6 +65,8 @@ h4,
 h5,
 h6 {
   margin: 0;
+  font-family: ${mainStyleFonts.mainFont};
+  color: ${mainStyleColors.mainWhite};
   overflow-wrap: break-word;
 }
 img {
