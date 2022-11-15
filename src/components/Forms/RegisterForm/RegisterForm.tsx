@@ -106,7 +106,7 @@ const RegisterForm = (): JSX.Element => {
           </div>
           <Button action={() => {}} text="Register" />
           <p className="form__link">
-            Registered? <a href="/login">Login now</a>
+            Registered? <a href="/users/login">Login now</a>
           </p>
         </div>
       </FormStyled>

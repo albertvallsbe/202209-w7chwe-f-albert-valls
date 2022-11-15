@@ -7,7 +7,11 @@ export const FormStyled = styled.form`
   flex-direction: column;
   align-items: center;
   margin: 50px 0;
+  padding-bottom: 2rem;
   justify-content: center;
+  border-radius: 1rem;
+  border: 1px solid ${mainStyleColors.mainWhite};
+  background-color: ${mainStyleColors.mainBlack};
 
   .form {
     &__item {
@@ -40,7 +44,7 @@ export const FormStyled = styled.form`
     width: 100%;
   }
   p {
-    margin-top: 0.5rem;
+    margin: 0.5rem;
     text-align: center;
     text-decoration: none;
     font-size: ${mainStyleFonts.mainSmallFontSize};
