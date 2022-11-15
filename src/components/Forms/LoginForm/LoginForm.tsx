@@ -5,7 +5,7 @@ import { UserCredentials } from "../../../types/types";
 import Button from "../../Button/Button";
 
 const LoginForm = (): JSX.Element => {
-  const { login } = useUser();
+  const { logIn } = useUser();
 
   const initialFormData = {
     username: "",
@@ -32,7 +32,7 @@ const LoginForm = (): JSX.Element => {
       username: formData.username,
       password: formData.password,
     };
-    login(user);
+    logIn(user);
   };
 
   return (

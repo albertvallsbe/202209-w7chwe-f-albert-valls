@@ -1,4 +1,5 @@
 import axios from "axios";
+import decodeToken from "jwt-decode";
 import { useAppDispatch } from "../redux/hooks";
 import {
   loginUserActionCreator,
@@ -10,15 +11,25 @@ import {
   LoginResponse,
   User,
   UserCredentials,
+  UserRegisterCredentials,
 } from "../types/types";
-import decodeToken from "jwt-decode";
 
 const useUser = () => {
   const url = process.env.REACT_APP_API_URL_LOCAL!;
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const login = async (user: UserCredentials) => {
+  const registerUser = async (userData: UserRegisterCredentials) => {
+    await axios.post(`${url}users/register`, {
+      username: userData.username,
+      password: userData.password,
+      email: userData.email,
+    });
+
+    return true;
+  };
+
+  const logIn = async (user: UserCredentials) => {
     try {
       const login = await axios.post<LoginResponse>(`${url}users/login`, {
         username: user.username,
@@ -39,14 +50,14 @@ const useUser = () => {
     } catch {}
   };
 
-  const logout = () => {
+  const logOut = () => {
     try {
       localStorage.setItem("token", "");
       dispatch(logoutUserActionCreator());
       navigate("/");
     } catch {}
   };
-  return { login, logout };
+  return { registerUser, logIn, logOut };
 };
 
 export default useUser;
