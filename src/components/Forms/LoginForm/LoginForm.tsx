@@ -74,7 +74,7 @@ const LoginForm = (): JSX.Element => {
           <div>
             <Button action={() => {}} text="Login" />
             <p className="form__link">
-              Not a member? <a href="/register">Register now</a>
+              Not a member? <a href="/users/register">Register now</a>
             </p>
           </div>
         </div>

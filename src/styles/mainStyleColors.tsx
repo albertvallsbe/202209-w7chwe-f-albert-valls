@@ -8,6 +8,8 @@ const mainStyleColors = {
   secondaryLightBlue: "#bbdaf5",
   secondaryLightBlueHover: "#90c2ee",
 
+  secondaryGreen: "#b3cccc",
+
   secondaryBlue: "#2d2d80",
   mainBlackTransparent: "rgba(24, 38, 38, 0.8)",
 };
