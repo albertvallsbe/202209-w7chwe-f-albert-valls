@@ -14,8 +14,7 @@ html {
   width: 100%;
   min-height: 100vh;
   font-family: ${mainStyleFonts.mainFont};
-  background-color: "#7eabc3";
-  color: "#7eabc3";
+  background-color: ${mainStyleColors.mainBlack};
 }
 body {
  
