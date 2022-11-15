@@ -1,8 +1,8 @@
+import FormStyled from "../FormStyled";
 import { useState } from "react";
 import useUser from "../../../hooks/useUser";
 import { UserCredentials } from "../../../types/types";
 import Button from "../../Button/Button";
-import { FormStyled } from "../FormStyled";
 
 const LoginForm = (): JSX.Element => {
   const { login } = useUser();
@@ -45,6 +45,8 @@ const LoginForm = (): JSX.Element => {
                 Username
               </label>
               <input
+                className="form__item"
+                placeholder="username"
                 type="text"
                 name="userName"
                 id="username"
@@ -58,6 +60,8 @@ const LoginForm = (): JSX.Element => {
                 Password
               </label>
               <input
+                className="form__item"
+                placeholder="password"
                 type="password"
                 name="password"
                 id="password"

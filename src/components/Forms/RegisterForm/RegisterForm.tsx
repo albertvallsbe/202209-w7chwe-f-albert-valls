@@ -45,6 +45,8 @@ const RegisterForm = (): JSX.Element => {
                 Username
               </label>
               <input
+                className="form__item"
+                placeholder="username"
                 type="text"
                 name="userName"
                 id="username"
@@ -58,6 +60,8 @@ const RegisterForm = (): JSX.Element => {
                 Password
               </label>
               <input
+                className="form__item"
+                placeholder="password"
                 type="password"
                 name="password"
                 id="password"
@@ -71,6 +75,8 @@ const RegisterForm = (): JSX.Element => {
                 Email
               </label>
               <input
+                className="form__item"
+                placeholder="email"
                 type="email"
                 name="email"
                 id="email"
