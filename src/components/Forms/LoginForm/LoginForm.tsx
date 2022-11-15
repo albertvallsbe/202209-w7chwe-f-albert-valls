@@ -3,6 +3,7 @@ import { useState } from "react";
 import useUser from "../../../hooks/useUser";
 import { UserCredentials } from "../../../types/types";
 import Button from "../../Button/Button";
+import LogoComponent from "../../LogoComponent/LogoComponent";
 
 const LoginForm = (): JSX.Element => {
   const { logIn } = useUser();
@@ -39,6 +40,7 @@ const LoginForm = (): JSX.Element => {
     <>
       <FormStyled onSubmit={handleSubmit}>
         <div className="form__container">
+          <LogoComponent />
           <div className="form__block">
             <div className="form__group">
               <label className="form__label" htmlFor="username">

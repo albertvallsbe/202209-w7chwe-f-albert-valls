@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useUser from "../../../hooks/useUser";
 import { UserRegisterCredentials } from "../../../types/types";
 import Button from "../../Button/Button";
+import LogoComponent from "../../LogoComponent/LogoComponent";
 import { FormStyled } from "../FormStyled";
 
 const RegisterForm = (): JSX.Element => {
@@ -57,6 +58,7 @@ const RegisterForm = (): JSX.Element => {
     <>
       <FormStyled onSubmit={handleSubmit}>
         <div className="form__container">
+          <LogoComponent />
           <div className="form__block">
             <div className="form__group">
               <label className="form__label" htmlFor="username">
