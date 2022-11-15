@@ -1,15 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useUser from "../../../hooks/useUser";
-import { UserCredentials } from "../../../types/types";
+import { UserRegisterCredentials } from "../../../types/types";
 import Button from "../../Button/Button";
 import { FormStyled } from "../FormStyled";
 
 const RegisterForm = (): JSX.Element => {
-  const { login } = useUser();
+  const { registerUser, logIn } = useUser();
+  const navigate = useNavigate();
 
   const initialFormData = {
     username: "",
     password: "",
+    email: "",
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -25,14 +28,29 @@ const RegisterForm = (): JSX.Element => {
     });
   };
 
-  const handleSubmit = (event: React.SyntheticEvent) => {
+  const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
 
-    const user: UserCredentials = {
+    const formDataToSubmit: UserRegisterCredentials = {
       username: formData.username,
       password: formData.password,
+      email: formData.email,
     };
-    login(user);
+
+    const isRegistered = await registerUser(formDataToSubmit);
+
+    const login = await logIn({
+      username: formData.username,
+      password: formData.password,
+    });
+
+    if (isRegistered) {
+      setTimeout(async () => {
+        if (login) {
+          navigate("/home");
+        }
+      }, 3000);
+    }
   };
 
   return (
