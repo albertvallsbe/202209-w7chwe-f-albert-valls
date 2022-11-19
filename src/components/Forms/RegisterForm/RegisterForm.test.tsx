@@ -1,4 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { store } from "../../../redux/store";
 
 import RegisterForm from "../RegisterForm/RegisterForm";
 
@@ -10,13 +13,17 @@ describe("Given the register form component", () => {
       const expectedEmail = "Email";
       const expectedButton = "Register";
 
-      render(<RegisterForm />);
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <RegisterForm />
+          </Provider>
+        </BrowserRouter>
+      );
 
       const usernameInput = screen.getByPlaceholderText(expectedUsername);
       const passwordInput = screen.getByLabelText(expectedPassword);
-      const emailInput = screen.getByRole("textbox", {
-        name: expectedEmail,
-      });
+      const emailInput = screen.getByRole("textbox", { name: expectedEmail });
       const button = screen.queryByRole("button", { name: expectedButton });
 
       expect(usernameInput).toBeInTheDocument();
